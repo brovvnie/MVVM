@@ -12,7 +12,9 @@ import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.viewmodel.internal.ViewModelProviders;
+
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.goldze.mvvmhabit.bus.Messenger;
@@ -55,9 +57,6 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
         super.onDestroyView();
         //解除Messenger注册
         Messenger.getDefault().unregister(viewModel);
-        if (viewModel != null) {
-            viewModel.removeRxBus();
-        }
         if (binding != null) {
             binding.unbind();
         }
@@ -74,8 +73,6 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
         initData();
         //页面事件监听的方法，一般用于ViewModel层转到View层的事件注册
         initViewObservable();
-        //注册RxBus
-        viewModel.registerRxBus();
     }
 
     /**
@@ -281,6 +278,6 @@ public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseVie
      * @return
      */
     public <T extends ViewModel> T createViewModel(Fragment fragment, Class<T> cls) {
-        return ViewModelProviders.of(fragment).get(cls);
+        return new ViewModelProvider(fragment).get(cls);
     }
 }

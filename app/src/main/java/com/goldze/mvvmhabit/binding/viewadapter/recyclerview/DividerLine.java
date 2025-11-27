@@ -17,7 +17,7 @@ public class DividerLine extends RecyclerView.ItemDecoration {
     //默认分隔线厚度为2dp
     private static final int DEFAULT_DIVIDER_SIZE = 1;
     //控制分隔线的属性,值为一个drawable
-    private static final int ATTRS[] = {android.R.attr.listDivider};
+    private static final int[] ATTRS = new int[]{android.R.attr.listDivider};
     //divider对应的drawable
     private Drawable dividerDrawable;
     private Context mContext;

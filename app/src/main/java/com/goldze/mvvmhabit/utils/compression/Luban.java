@@ -187,6 +187,7 @@ public class Luban {
     /**
      * @deprecated
      */
+    @Deprecated
     public Luban setFilename(String filename) {
         this.filename = filename;
         return this;

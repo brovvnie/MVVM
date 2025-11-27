@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.activity.OnBackPressedDispatcher;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -40,6 +42,19 @@ public class ContainerActivity extends RxAppCompatActivity {
         trans.replace(R.id.content, fragment);
         trans.commitAllowingStateLoss();
         mFragment = new WeakReference<>(fragment);
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.content);
+                if (fragment instanceof BaseFragment) {
+                    if (!((BaseFragment) fragment).isBackPressed()) {
+                        onBackPressed();
+                    }
+                } else {
+                    onBackPressed();
+                }
+            }
+        });
     }
 
     @Override
@@ -73,17 +88,5 @@ public class ContainerActivity extends RxAppCompatActivity {
             e.printStackTrace();
         }
         throw new RuntimeException("fragment initialization failed!");
-    }
-
-    @Override
-    public void onBackPressed() {
-        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.content);
-        if (fragment instanceof BaseFragment) {
-            if (!((BaseFragment) fragment).isBackPressed()) {
-                super.onBackPressed();
-            }
-        } else {
-            super.onBackPressed();
-        }
     }
 }

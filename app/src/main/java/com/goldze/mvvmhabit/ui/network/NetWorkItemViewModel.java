@@ -7,13 +7,13 @@ import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.databinding.ObservableField;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.goldze.mvvmhabit.R;
 import com.goldze.mvvmhabit.base.ItemViewModel;
 import com.goldze.mvvmhabit.binding.command.BindingAction;
 import com.goldze.mvvmhabit.binding.command.BindingCommand;
 import com.goldze.mvvmhabit.entity.DemoEntity;
 import com.goldze.mvvmhabit.ui.network.detail.DetailFragment;
-import com.goldze.mvvmhabit.utils.ToastUtils;
 
 /**
  * Created by goldze on 2017/7/17.

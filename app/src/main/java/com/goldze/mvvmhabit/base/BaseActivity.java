@@ -9,7 +9,8 @@ import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModel;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.viewmodel.internal.ViewModelProviders;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.goldze.mvvmhabit.bus.Messenger;
@@ -44,8 +45,6 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         initData();
         //页面事件监听的方法，一般用于ViewModel层转到View层的事件注册
         initViewObservable();
-        //注册RxBus
-        viewModel.registerRxBus();
     }
 
     @Override
@@ -53,10 +52,7 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         super.onDestroy();
         //解除Messenger注册
         Messenger.getDefault().unregister(viewModel);
-        if (viewModel != null) {
-            viewModel.removeRxBus();
-        }
-        if(binding != null){
+        if (binding != null) {
             binding.unbind();
         }
     }
@@ -68,18 +64,11 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         //DataBindingUtil类需要在project的build中配置 dataBinding {enabled true }, 同步后会自动关联android.databinding包
         binding = DataBindingUtil.setContentView(this, initContentView(savedInstanceState));
         viewModelId = initVariableId();
-        viewModel = initViewModel();
-        if (viewModel == null) {
-            Class modelClass;
-            Type type = getClass().getGenericSuperclass();
-            if (type instanceof ParameterizedType) {
-                modelClass = (Class) ((ParameterizedType) type).getActualTypeArguments()[1];
-            } else {
-                //如果没有指定泛型参数，则默认使用BaseViewModel
-                modelClass = BaseViewModel.class;
-            }
-            viewModel = (VM) createViewModel(this, modelClass);
-        }
+
+        Type type = getClass().getGenericSuperclass();
+        Class modelClass = (Class) ((ParameterizedType) type).getActualTypeArguments()[1];
+        viewModel = (VM) ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(modelClass);
+
         //关联ViewModel
         binding.setVariable(viewModelId, viewModel);
         //支持LiveData绑定xml，数据改变，UI自动会更新
@@ -236,15 +225,6 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
      */
     public abstract int initVariableId();
 
-    /**
-     * 初始化ViewModel
-     *
-     * @return 继承BaseViewModel的ViewModel
-     */
-    public VM initViewModel() {
-        return null;
-    }
-
     @Override
     public void initData() {
 
@@ -253,16 +233,5 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     @Override
     public void initViewObservable() {
 
-    }
-
-    /**
-     * 创建ViewModel
-     *
-     * @param cls
-     * @param <T>
-     * @return
-     */
-    public <T extends ViewModel> T createViewModel(FragmentActivity activity, Class<T> cls) {
-        return ViewModelProviders.of(activity).get(cls);
     }
 }

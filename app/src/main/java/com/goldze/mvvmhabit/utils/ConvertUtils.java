@@ -10,6 +10,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 
+import com.blankj.utilcode.util.Utils;
 import com.goldze.mvvmhabit.utils.constant.MemoryConstants;
 import com.goldze.mvvmhabit.utils.constant.TimeConstants;
 
@@ -128,13 +129,13 @@ public final class ConvertUtils {
      * 以unit为单位的内存大小转字节数
      *
      * @param memorySize 大小
-     * @param unit 单位类型
-     * <ul>
-     * <li>{@link MemoryConstants#BYTE}: 字节</li>
-     * <li>{@link MemoryConstants#KB}  : 千字节</li>
-     * <li>{@link MemoryConstants#MB}  : 兆</li>
-     * <li>{@link MemoryConstants#GB}  : GB</li>
-     * </ul>
+     * @param unit       单位类型
+     *                   <ul>
+     *                   <li>{@link MemoryConstants#BYTE}: 字节</li>
+     *                   <li>{@link MemoryConstants#KB}  : 千字节</li>
+     *                   <li>{@link MemoryConstants#MB}  : 兆</li>
+     *                   <li>{@link MemoryConstants#GB}  : GB</li>
+     *                   </ul>
      * @return 字节数
      */
     public static long memorySize2Byte(final long memorySize, @MemoryConstants.Unit final int unit) {
@@ -146,13 +147,13 @@ public final class ConvertUtils {
      * 字节数转以unit为单位的内存大小
      *
      * @param byteNum 字节数
-     * @param unit 单位类型
-     * <ul>
-     * <li>{@link MemoryConstants#BYTE}: 字节</li>
-     * <li>{@link MemoryConstants#KB}  : 千字节</li>
-     * <li>{@link MemoryConstants#MB}  : 兆</li>
-     * <li>{@link MemoryConstants#GB}  : GB</li>
-     * </ul>
+     * @param unit    单位类型
+     *                <ul>
+     *                <li>{@link MemoryConstants#BYTE}: 字节</li>
+     *                <li>{@link MemoryConstants#KB}  : 千字节</li>
+     *                <li>{@link MemoryConstants#MB}  : 兆</li>
+     *                <li>{@link MemoryConstants#GB}  : GB</li>
+     *                </ul>
      * @return 以unit为单位的size
      */
     public static double byte2MemorySize(final long byteNum, @MemoryConstants.Unit final int unit) {
@@ -186,14 +187,14 @@ public final class ConvertUtils {
      * 以unit为单位的时间长度转毫秒时间戳
      *
      * @param timeSpan 毫秒时间戳
-     * @param unit 单位类型
-     * <ul>
-     * <li>{@link TimeConstants#MSEC}: 毫秒</li>
-     * <li>{@link TimeConstants#SEC }: 秒</li>
-     * <li>{@link TimeConstants#MIN }: 分</li>
-     * <li>{@link TimeConstants#HOUR}: 小时</li>
-     * <li>{@link TimeConstants#DAY }: 天</li>
-     * </ul>
+     * @param unit     单位类型
+     *                 <ul>
+     *                 <li>{@link TimeConstants#MSEC}: 毫秒</li>
+     *                 <li>{@link TimeConstants#SEC }: 秒</li>
+     *                 <li>{@link TimeConstants#MIN }: 分</li>
+     *                 <li>{@link TimeConstants#HOUR}: 小时</li>
+     *                 <li>{@link TimeConstants#DAY }: 天</li>
+     *                 </ul>
      * @return 毫秒时间戳
      */
     public static long timeSpan2Millis(final long timeSpan, @TimeConstants.Unit final int unit) {
@@ -204,14 +205,14 @@ public final class ConvertUtils {
      * 毫秒时间戳转以unit为单位的时间长度
      *
      * @param millis 毫秒时间戳
-     * @param unit 单位类型
-     * <ul>
-     * <li>{@link TimeConstants#MSEC}: 毫秒</li>
-     * <li>{@link TimeConstants#SEC }: 秒</li>
-     * <li>{@link TimeConstants#MIN }: 分</li>
-     * <li>{@link TimeConstants#HOUR}: 小时</li>
-     * <li>{@link TimeConstants#DAY }: 天</li>
-     * </ul>
+     * @param unit   单位类型
+     *               <ul>
+     *               <li>{@link TimeConstants#MSEC}: 毫秒</li>
+     *               <li>{@link TimeConstants#SEC }: 秒</li>
+     *               <li>{@link TimeConstants#MIN }: 分</li>
+     *               <li>{@link TimeConstants#HOUR}: 小时</li>
+     *               <li>{@link TimeConstants#DAY }: 天</li>
+     *               </ul>
      * @return 以unit为单位的时间长度
      */
     public static long millis2TimeSpan(final long millis, @TimeConstants.Unit final int unit) {
@@ -221,17 +222,17 @@ public final class ConvertUtils {
     /**
      * 毫秒时间戳转合适时间长度
      *
-     * @param millis 毫秒时间戳
-     * <p>小于等于0，返回null</p>
+     * @param millis    毫秒时间戳
+     *                  <p>小于等于0，返回null</p>
      * @param precision 精度
-     * <ul>
-     * <li>precision = 0，返回null</li>
-     * <li>precision = 1，返回天</li>
-     * <li>precision = 2，返回天和小时</li>
-     * <li>precision = 3，返回天、小时和分钟</li>
-     * <li>precision = 4，返回天、小时、分钟和秒</li>
-     * <li>precision &gt;= 5，返回天、小时、分钟、秒和毫秒</li>
-     * </ul>
+     *                  <ul>
+     *                  <li>precision = 0，返回null</li>
+     *                  <li>precision = 1，返回天</li>
+     *                  <li>precision = 2，返回天和小时</li>
+     *                  <li>precision = 3，返回天、小时和分钟</li>
+     *                  <li>precision = 4，返回天、小时、分钟和秒</li>
+     *                  <li>precision &gt;= 5，返回天、小时、分钟、秒和毫秒</li>
+     *                  </ul>
      * @return 合适时间长度
      */
     @SuppressLint("DefaultLocale")
@@ -385,7 +386,7 @@ public final class ConvertUtils {
     /**
      * inputStream转string按编码
      *
-     * @param is 输入流
+     * @param is          输入流
      * @param charsetName 编码格式
      * @return 字符串
      */
@@ -402,7 +403,7 @@ public final class ConvertUtils {
     /**
      * string转inputStream按编码
      *
-     * @param string 字符串
+     * @param string      字符串
      * @param charsetName 编码格式
      * @return 输入流
      */
@@ -419,7 +420,7 @@ public final class ConvertUtils {
     /**
      * outputStream转string按编码
      *
-     * @param out 输出流
+     * @param out         输出流
      * @param charsetName 编码格式
      * @return 字符串
      */
@@ -436,7 +437,7 @@ public final class ConvertUtils {
     /**
      * string转outputStream按编码
      *
-     * @param string 字符串
+     * @param string      字符串
      * @param charsetName 编码格式
      * @return 输入流
      */
@@ -508,14 +509,14 @@ public final class ConvertUtils {
      * @return drawable
      */
     public static Drawable bitmap2Drawable(final Bitmap bitmap) {
-        return bitmap == null ? null : new BitmapDrawable(Utils.getContext().getResources(), bitmap);
+        return bitmap == null ? null : new BitmapDrawable(Utils.getApp().getResources(), bitmap);
     }
 
     /**
      * drawable转byteArr
      *
      * @param drawable drawable对象
-     * @param format 格式
+     * @param format   格式
      * @return 字节数组
      */
     public static byte[] drawable2Bytes(final Drawable drawable, final Bitmap.CompressFormat format) {
@@ -559,7 +560,7 @@ public final class ConvertUtils {
      * @return px值
      */
     public static int dp2px(final float dpValue) {
-        final float scale = Utils.getContext().getResources().getDisplayMetrics().density;
+        final float scale = Utils.getApp().getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
     }
 
@@ -570,7 +571,7 @@ public final class ConvertUtils {
      * @return dp值
      */
     public static int px2dp(final float pxValue) {
-        final float scale = Utils.getContext().getResources().getDisplayMetrics().density;
+        final float scale = Utils.getApp().getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
 
@@ -581,7 +582,7 @@ public final class ConvertUtils {
      * @return px值
      */
     public static int sp2px(final float spValue) {
-        final float fontScale = Utils.getContext().getResources().getDisplayMetrics().scaledDensity;
+        final float fontScale = Utils.getApp().getResources().getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
     }
 
@@ -592,7 +593,7 @@ public final class ConvertUtils {
      * @return sp值
      */
     public static int px2sp(final float pxValue) {
-        final float fontScale = Utils.getContext().getResources().getDisplayMetrics().scaledDensity;
+        final float fontScale = Utils.getApp().getResources().getDisplayMetrics().scaledDensity;
         return (int) (pxValue / fontScale + 0.5f);
     }
 

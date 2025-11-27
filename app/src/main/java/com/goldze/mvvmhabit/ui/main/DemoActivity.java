@@ -8,13 +8,13 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.goldze.mvvmhabit.BR;
 import com.goldze.mvvmhabit.R;
 import com.goldze.mvvmhabit.base.BaseActivity;
 import com.goldze.mvvmhabit.databinding.ActivityDemoBinding;
 import com.goldze.mvvmhabit.http.DownLoadManager;
 import com.goldze.mvvmhabit.http.download.ProgressCallBack;
-import com.goldze.mvvmhabit.utils.ToastUtils;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 
 import io.reactivex.functions.Consumer;

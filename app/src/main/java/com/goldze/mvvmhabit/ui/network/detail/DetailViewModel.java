@@ -4,6 +4,7 @@ import android.app.Application;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.ObservableField;
+import androidx.lifecycle.LifecycleOwner;
 
 import com.goldze.mvvmhabit.base.BaseViewModel;
 import com.goldze.mvvmhabit.entity.DemoEntity;
@@ -24,8 +25,8 @@ public class DetailViewModel extends BaseViewModel {
     }
 
     @Override
-    public void onDestroy() {
-        super.onDestroy();
+    public void onDestroy(@NonNull LifecycleOwner owner) {
+        super.onDestroy(owner);
         entity = null;
     }
 }

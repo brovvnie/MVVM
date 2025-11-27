@@ -36,7 +36,7 @@ public class LayoutManagers {
     /**
      * A {@link LinearLayoutManager} with the given orientation and reverseLayout.
      */
-    public static LayoutManagerFactory linear(@Orientation final int orientation, final boolean reverseLayout) {
+    public static LayoutManagerFactory linear(@RecyclerView.Orientation final int orientation, final boolean reverseLayout) {
         return new LayoutManagerFactory() {
             @Override
             public RecyclerView.LayoutManager create(RecyclerView recyclerView) {
@@ -60,7 +60,7 @@ public class LayoutManagers {
     /**
      * A {@link GridLayoutManager} with the given spanCount, orientation and reverseLayout.
      **/
-    public static LayoutManagerFactory grid(final int spanCount, @Orientation final int orientation, final boolean reverseLayout) {
+    public static LayoutManagerFactory grid(final int spanCount, @RecyclerView.Orientation final int orientation, final boolean reverseLayout) {
         return new LayoutManagerFactory() {
             @Override
             public RecyclerView.LayoutManager create(RecyclerView recyclerView) {

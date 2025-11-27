@@ -1,8 +1,8 @@
 package com.goldze.mvvmhabit.http;
 
-import com.goldze.mvvmhabit.base.AppManager;
-import com.goldze.mvvmhabit.utils.ToastUtils;
-import com.goldze.mvvmhabit.utils.Utils;
+import com.blankj.utilcode.util.ActivityUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.blankj.utilcode.util.Utils;
 
 import io.reactivex.observers.DisposableObserver;
 
@@ -36,7 +36,7 @@ public abstract class ApiDisposableObserver<T> extends DisposableObserver<T> {
         super.onStart();
         ToastUtils.showShort("http is start");
         // if  NetworkAvailable no !   must to call onCompleted
-        if (!NetworkUtil.isNetworkAvailable(Utils.getContext())) {
+        if (!NetworkUtil.isNetworkAvailable(Utils.getApp())) {
             onComplete();
         }
     }
@@ -75,7 +75,7 @@ public abstract class ApiDisposableObserver<T> extends DisposableObserver<T> {
                 //无效的Token，提示跳入登录页
                 ToastUtils.showShort("token已过期，请重新登录");
                 //关闭所有页面
-                AppManager.getAppManager().finishAllActivity();
+                ActivityUtils.finishAllActivities();
                 //跳入登录界面
                 //*****该类仅供参考，实际业务Code, 根据需求来定义，******//
                 break;

@@ -2,11 +2,11 @@ package com.goldze.mvvmhabit.ui.rv_multi;
 
 import androidx.annotation.NonNull;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.goldze.mvvmhabit.base.BaseViewModel;
 import com.goldze.mvvmhabit.base.MultiItemViewModel;
 import com.goldze.mvvmhabit.binding.command.BindingAction;
 import com.goldze.mvvmhabit.binding.command.BindingCommand;
-import com.goldze.mvvmhabit.utils.ToastUtils;
 /**
  * Create Author：goldze
  * Create Date：2019/01/25

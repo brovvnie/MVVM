@@ -1,0 +1,164 @@
+[versions]
+agp = "8.13.0"
+android_cn_oaid = "4.2.12"
+androidsvg = "1.4"
+banner = "2.2.3"
+common = "4.1.14"
+converterGson = "2.9.0"
+converterScalars = "2.6.2"
+coreVersion = "3.5.3"
+crashreport = "4.1.9.3"
+dkplayerJava = "3.3.7"
+eventbus = "3.3.1"
+exoplayerCore = "2.19.1"
+fragmentKtx = "1.8.9"
+gson = "2.11.0"
+kotlin = "2.2.21"
+core = "1.17.0"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+kotlinxCoroutinesAndroid = "1.7.3"
+library = "1.7.7"
+activityCompose = "1.10.1"
+composeBom = "2025.05.01"
+fragment = "1.8.7"
+appcompat = "1.7.1"
+lottie = "6.6.6"
+marqueeview = "1.3.8"
+material = "1.13.0"
+jsoup = "1.18.1"
+mediationAutoAdapter = "1.0.3"
+mobsdk2 = "2022.0714.1020"
+multidex = "1.0.3"
+pictureselector = "v3.11.3"
+retrofit2 = "2.12.0"
+rxAndroid = "3.0.2"
+fastjson = "1.2.83"
+fastjson2 = "2.0.60.android8"
+rxrelay = "2.1.1"
+swiperefreshlayout = "1.1.0"
+tbssdk = "44115"
+utilcode = "1.31.1"
+smartRefresh = "2.1.0"
+pangleMediation = "6.8.0.9"
+panglePangrowthSdk = "4.4.1.0"
+panglePangrowth = "2.8.0.1"
+localBroadCastManager = "1.1.0"
+recyclerview = "1.4.0"
+glide = "4.16.0"
+okhttp3 = "4.12.0"
+webkit = "1.13.0"
+v7 = "28.0.0"
+constraintlayout = "2.2.1"
+wechat = "10.1511"
+amapLocation = "6.1.0"
+amap = "9.5.0"
+autoSize = "v1.2.1"
+activity = "1.10.1"
+legacySupportV4 = "1.0.0"
+baseAdapter = "4.1.4"
+reflect = "2.1.0"
+wechatSdkAndroid = "6.8.30"
+xxpermissions = "23.0"
+zxingAndroidEmbedded = "3.6.0"
+lifecycle = "2.10.0"
+
+[libraries]
+addresspicker = { module = "com.github.gzu-liyujiang.AndroidPicker:AddressPicker", version.ref = "common" }
+android_cn_oaid = { module = "com.github.gzu-liyujiang:Android_CN_OAID", version.ref = "android_cn_oaid" }
+androidsvg = { module = "com.caverock:androidsvg", version.ref = "androidsvg" }
+androidx-fragment-ktx = { module = "androidx.fragment:fragment-ktx", version.ref = "fragmentKtx" }
+androidx-swiperefreshlayout = { module = "androidx.swiperefreshlayout:swiperefreshlayout", version.ref = "swiperefreshlayout" }
+banner = { module = "io.github.youth5201314:banner", version.ref = "banner" }
+common = { module = "com.github.gzu-liyujiang.AndroidPicker:Common", version.ref = "common" }
+converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }
+converter-scalars = { module = "com.squareup.retrofit2:converter-scalars", version.ref = "converterScalars" }
+core = { module = "com.google.zxing:core", version.ref = "coreVersion" }
+crashreport = { module = "com.tencent.bugly:crashreport", version.ref = "crashreport" }
+dkplayer-java = { module = "xyz.doikki.android.dkplayer:dkplayer-java", version.ref = "dkplayerJava" }
+dkplayer-ui = { module = "xyz.doikki.android.dkplayer:dkplayer-ui", version.ref = "dkplayerJava" }
+eventbus = { module = "org.greenrobot:eventbus", version.ref = "eventbus" }
+eventbus-annotation-processor = { module = "org.greenrobot:eventbus-annotation-processor", version.ref = "eventbus" }
+exoplayer-core = { module = "com.google.android.exoplayer:exoplayer-core", version.ref = "exoplayerCore" }
+gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
+library = { module = "com.liulishuo.filedownloader:library", version.ref = "library" }
+lottie = { module = "com.airbnb.android:lottie", version.ref = "lottie" }
+marqueeview = { module = "com.sunfusheng:marqueeview", version.ref = "marqueeview" }
+mobsdk2 = { module = "com.mob.sdk:MobSDK2", version.ref = "mobsdk2" }
+multidex = { module = "com.android.support:multidex", version.ref = "multidex" }
+pictureselector = { module = "io.github.lucksiege:pictureselector", version.ref = "pictureselector" }
+rxrelay = { module = "com.jakewharton.rxrelay2:rxrelay", version.ref = "rxrelay" }
+support-v4 = { module = "com.android.support:support-v4", version.ref = "v7" }
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+androidx-legacy = { module = "androidx.legacy:legacy-support-v4", version.ref = "legacySupportV4" }
+androidx-activity = { module = "androidx.activity:activity", version.ref = "activity" }
+androidx-core = { module = "androidx.core:core", version.ref = "core" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "fragment" }
+androidx-localbroadcastmanager = { module = "androidx.localbroadcastmanager:localbroadcastmanager", version.ref = "localBroadCastManager" }
+androidx-recyclerview = { module = "androidx.recyclerview:recyclerview", version.ref = "recyclerview" }
+androidx-webkit = { module = "androidx.webkit:webkit", version.ref = "webkit" }
+constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+jsoup = { module = "org.jsoup:jsoup", version.ref = "jsoup" }
+mediation-auto-adapter = { module = "com.pangle.cn:mediation-auto-adapter", version.ref = "mediationAutoAdapter" }
+okhttp3 = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp3" }
+okhttp3-logging-interceptor = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okhttp3" }
+retrofit2-retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit2" }
+retrofit2-adapter-rxjava3 = { module = "com.squareup.retrofit2:adapter-rxjava3", version.ref = "retrofit2" }
+rxjava3-rxandroid = { module = "io.reactivex.rxjava3:rxandroid", version.ref = "rxAndroid" }
+fastjson = { module = "com.alibaba:fastjson", version.ref = "fastjson" }
+fastjson2 = { module = "com.alibaba.fastjson2:fastjson2", version.ref = "fastjson2" }
+tbssdk = { module = "com.tencent.tbs:tbssdk", version.ref = "tbssdk" }
+utilcode = { module = "com.blankj:utilcodex", version.ref = "utilcode" }
+smart-refresh-layout = { module = "io.github.scwang90:refresh-layout-kernel", version.ref = "smartRefresh" }
+smart-refresh-header = { module = "io.github.scwang90:refresh-header-classics", version.ref = "smartRefresh" }
+smart-refresh-footer = { module = "io.github.scwang90:refresh-footer-classics", version.ref = "smartRefresh" }
+pangle-mediation = { module = "com.pangle.cn:mediation-sdk", version.ref = "pangleMediation" }
+pangle-pangrowth = { module = "com.pangle.cn:pangrowth-sdk", version.ref = "panglePangrowthSdk" }
+pangle-pangrowth-base = { module = "com.pangle.cn:pangrowth-base", version.ref = "panglePangrowth" }
+pangle-pangrowth-djx = { module = "com.pangle.cn:pangrowth-djx-sdk-lite", version.ref = "panglePangrowth" }
+pangle-pangrowth-nov = { module = "com.pangle.cn:pangrowth-nov-sdk", version.ref = "panglePangrowth" }
+glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
+videocache = { module = "xyz.doikki.android.dkplayer:videocache", version.ref = "dkplayerJava" }
+wechat = { module = "com.tencent.mm.opensdk:wechat-sdk-android-without-mta", version.ref = "wechat" }
+amap-location = { module = "com.amap.api:location", version.ref = "amapLocation" }
+amap-map = { module = "com.amap.api:3dmap", version.ref = "amap" }
+amap-search = { module = "com.amap.api:search", version.ref = "amap" }
+autoSize = { module = "com.github.JessYanCoding:AndroidAutoSize", version.ref = "autoSize" }
+baseAdapter = { module = "io.github.cymchad:BaseRecyclerViewAdapterHelper4", version.ref = "baseAdapter" }
+kotlin-reflect = { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "reflect" }
+wechat-sdk-android = { module = "com.tencent.mm.opensdk:wechat-sdk-android", version.ref = "wechatSdkAndroid" }
+xxpermissions = { module = "com.github.getActivity:XXPermissions", version.ref = "xxpermissions" }
+zxing-android-embedded = { module = "com.journeyapps:zxing-android-embedded", version.ref = "zxingAndroidEmbedded" }
+
+androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
+androidx-lifecycle-process = { module = "androidx.lifecycle:lifecycle-process", version.ref = "lifecycle" }
+androidx-lifecycle-common-java8 = { module = "androidx.lifecycle:lifecycle-common-java8", version.ref = "lifecycle" }
+
+[bundles]
+network = ['okhttp3', 'okhttp3-logging-interceptor', 'retrofit2-retrofit', 'retrofit2-adapter-rxjava3', 'rxjava3-rxandroid', 'fastjson2']
+smartRefresh = ['smart-refresh-layout', 'smart-refresh-header', 'smart-refresh-footer']
+lifecycle = ['androidx-lifecycle-runtime-ktx', 'androidx-lifecycle-viewmodel-ktx', 'androidx-lifecycle-livedata-ktx', 'androidx-lifecycle-process', 'androidx-lifecycle-common-java8']
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+jetbrains-kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }

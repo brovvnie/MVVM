@@ -6,8 +6,10 @@ import android.text.method.PasswordTransformationMethod;
 
 import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.viewmodel.internal.ViewModelProviders;
 
+import com.goldze.mvvmhabit.BR;
 import com.goldze.mvvmhabit.R;
 import com.goldze.mvvmhabit.base.BaseActivity;
 import com.goldze.mvvmhabit.databinding.ActivityLoginBinding;
@@ -24,12 +26,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
 
     @Override
     public int initVariableId() {
-        return 0;
-    }
-
-    @Override
-    public LoginViewModel initViewModel() {
-        return ViewModelProviders.of(this).get(LoginViewModel.class);
+        return BR.viewModel;
     }
 
     @Override

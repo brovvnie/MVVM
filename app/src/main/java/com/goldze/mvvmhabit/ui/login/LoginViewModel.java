@@ -8,16 +8,16 @@ import androidx.annotation.NonNull;
 import androidx.databinding.ObservableField;
 import androidx.databinding.ObservableInt;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.goldze.mvvmhabit.base.BaseViewModel;
 import com.goldze.mvvmhabit.binding.command.BindingAction;
 import com.goldze.mvvmhabit.binding.command.BindingCommand;
 import com.goldze.mvvmhabit.binding.command.BindingConsumer;
 import com.goldze.mvvmhabit.bus.event.SingleLiveEvent;
-import com.goldze.mvvmhabit.utils.ToastUtils;
+
 /**
  * Created by goldze on 2017/7/17.
  */
-
 public class LoginViewModel extends BaseViewModel {
     //用户名的绑定
     public ObservableField<String> userName = new ObservableField<>("");
@@ -28,13 +28,13 @@ public class LoginViewModel extends BaseViewModel {
     //封装一个界面发生改变的观察者
     public UIChangeObservable uc = new UIChangeObservable();
 
+    public LoginViewModel(@NonNull Application application) {
+        super(application);
+    }
+
     public class UIChangeObservable {
         //密码开关观察者
         public SingleLiveEvent<Boolean> pSwitchEvent = new SingleLiveEvent<>();
-    }
-
-    public LoginViewModel(@NonNull Application application) {
-        super(application);
     }
 
     //清除用户名的点击事件, 逻辑从View层转换到ViewModel层
@@ -83,11 +83,7 @@ public class LoginViewModel extends BaseViewModel {
             ToastUtils.showShort("请输入密码！");
             return;
         }
+        ToastUtils.showShort("登录了");
         //RaJava模拟登录
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 }

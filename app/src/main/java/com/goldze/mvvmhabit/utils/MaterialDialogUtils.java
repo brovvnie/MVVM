@@ -35,9 +35,9 @@ public class MaterialDialogUtils {
                 .titleGravity(GravityEnum.CENTER)
                 .titleColorRes(R.color.white)
                 .contentColorRes(android.R.color.white)
-                .backgroundColorRes(R.color.material_blue_grey_800)
+                .backgroundColorRes(R.color.colorAccent)
                 .dividerColorRes(R.color.white)
-                .btnSelector(R.drawable.md_selector, DialogAction.POSITIVE)
+                .btnSelector(R.mipmap.wode_select, DialogAction.POSITIVE)
                 .positiveColor(Color.WHITE)
                 .negativeColorAttr(android.R.attr.textColorSecondaryInverse)
                 .theme(Theme.DARK)
@@ -89,10 +89,6 @@ public class MaterialDialogUtils {
                     @Override
                     public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
                         if (event.getAction() == KeyEvent.ACTION_DOWN) {//如果是按下，则响应，否则，一次按下会响应两次
-                            if (keyCode == KeyEvent.KEYCODE_BACK) {
-                                //activity.onBackPressed();
-
-                            }
                         }
                         return false;//false允许按返回键取消对话框，true除了调用取消，其他情况下不会取消
                     }
@@ -292,7 +288,7 @@ public class MaterialDialogUtils {
                     }
                 })
                 .alwaysCallMultiChoiceCallback()
-                .positiveText(R.string.md_choose_label)
+                .positiveText("md_choose_label")
                 .autoDismiss(false)
                 .neutralText("clear")
                 .itemsDisabledIndices(0, 1);

@@ -6,7 +6,9 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.ObservableBoolean;
+import androidx.lifecycle.LifecycleOwner;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.goldze.mvvmhabit.binding.command.BindingAction;
 import com.goldze.mvvmhabit.binding.command.BindingCommand;
 import com.goldze.mvvmhabit.binding.command.BindingConsumer;
@@ -15,7 +17,6 @@ import com.goldze.mvvmhabit.bus.event.SingleLiveEvent;
 import com.goldze.mvvmhabit.entity.FormEntity;
 import com.goldze.mvvmhabit.entity.SpinnerItemData;
 import com.goldze.mvvmhabit.ui.base.viewmodel.ToolbarViewModel;
-import com.goldze.mvvmhabit.utils.ToastUtils;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -47,8 +48,8 @@ public class FormViewModel extends ToolbarViewModel {
     }
 
     @Override
-    public void onCreate() {
-        super.onCreate();
+    public void onCreate(@NonNull LifecycleOwner owner) {
+        super.onCreate(owner);
         uc = new UIChangeObservable();
         //sexItemDatas 一般可以从本地Sqlite数据库中取出数据字典对象集合，让该对象实现IKeyAndValue接口
         sexItemDatas = new ArrayList<>();
@@ -118,10 +119,5 @@ public class FormViewModel extends ToolbarViewModel {
         entity.setBir(year + "年" + (month + 1) + "月" + dayOfMonth + "日");
         //刷新实体,驱动界面更新
         entity.notifyChange();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
     }
 }

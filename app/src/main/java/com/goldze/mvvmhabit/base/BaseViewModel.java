@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.DefaultLifecycleObserver;
 import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.Observer;
@@ -23,7 +24,7 @@ import io.reactivex.functions.Consumer;
 /**
  * Created by goldze on 2017/6/15.
  */
-public class BaseViewModel extends AndroidViewModel implements IBaseViewModel, Consumer<Disposable> {
+public class BaseViewModel extends AndroidViewModel implements DefaultLifecycleObserver, Consumer<Disposable> {
     private UIChangeLiveData uc;
     //弱引用持有
     private WeakReference<LifecycleProvider> lifecycle;
@@ -134,42 +135,6 @@ public class BaseViewModel extends AndroidViewModel implements IBaseViewModel, C
      */
     public void onBackPressed() {
         uc.onBackPressedEvent.call();
-    }
-
-    @Override
-    public void onAny(LifecycleOwner owner, Lifecycle.Event event) {
-    }
-
-    @Override
-    public void onCreate() {
-    }
-
-    @Override
-    public void onDestroy() {
-    }
-
-    @Override
-    public void onStart() {
-    }
-
-    @Override
-    public void onStop() {
-    }
-
-    @Override
-    public void onResume() {
-    }
-
-    @Override
-    public void onPause() {
-    }
-
-    @Override
-    public void registerRxBus() {
-    }
-
-    @Override
-    public void removeRxBus() {
     }
 
     @Override

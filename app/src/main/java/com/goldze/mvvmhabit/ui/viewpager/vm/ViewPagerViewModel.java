@@ -6,13 +6,13 @@ import androidx.annotation.NonNull;
 import androidx.databinding.ObservableArrayList;
 import androidx.databinding.ObservableList;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.goldze.mvvmhabit.BR;
 import com.goldze.mvvmhabit.R;
 import com.goldze.mvvmhabit.base.BaseViewModel;
 import com.goldze.mvvmhabit.binding.command.BindingCommand;
 import com.goldze.mvvmhabit.binding.command.BindingConsumer;
 import com.goldze.mvvmhabit.bus.event.SingleLiveEvent;
-import com.goldze.mvvmhabit.utils.ToastUtils;
 
 import me.tatarka.bindingcollectionadapter2.BindingViewPagerAdapter;
 import me.tatarka.bindingcollectionadapter2.ItemBinding;

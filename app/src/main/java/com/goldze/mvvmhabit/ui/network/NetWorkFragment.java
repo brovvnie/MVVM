@@ -8,16 +8,16 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.blankj.utilcode.util.ToastUtils;
 import com.goldze.mvvmhabit.BR;
 import com.goldze.mvvmhabit.R;
 import com.goldze.mvvmhabit.base.BaseFragment;
 import com.goldze.mvvmhabit.databinding.FragmentNetworkBinding;
 import com.goldze.mvvmhabit.utils.MaterialDialogUtils;
-import com.goldze.mvvmhabit.utils.ToastUtils;
 
 /**
  * Created by goldze on 2017/7/17.
@@ -43,7 +43,7 @@ public class NetWorkFragment extends BaseFragment<FragmentNetworkBinding, NetWor
 
     @Override
     public NetWorkViewModel initViewModel() {
-        return ViewModelProviders.of(this).get(NetWorkViewModel.class);
+        return new ViewModelProvider(this).get(NetWorkViewModel.class);
     }
 
     @Override
@@ -83,11 +83,11 @@ public class NetWorkFragment extends BaseFragment<FragmentNetworkBinding, NetWor
                                 ToastUtils.showShort("取消");
                             }
                         }).onPositive(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                        viewModel.deleteItem(netWorkItemViewModel);
-                    }
-                }).show();
+                            @Override
+                            public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                                viewModel.deleteItem(netWorkItemViewModel);
+                            }
+                        }).show();
             }
         });
     }

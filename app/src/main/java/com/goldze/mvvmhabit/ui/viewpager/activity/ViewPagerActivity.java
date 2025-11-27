@@ -5,13 +5,13 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.goldze.mvvmhabit.BR;
 import com.goldze.mvvmhabit.R;
 import com.goldze.mvvmhabit.base.BaseActivity;
 import com.goldze.mvvmhabit.databinding.FragmentViewpagerBinding;
 import com.goldze.mvvmhabit.ui.viewpager.adapter.ViewPagerBindingAdapter;
 import com.goldze.mvvmhabit.ui.viewpager.vm.ViewPagerViewModel;
-import com.goldze.mvvmhabit.utils.ToastUtils;
 import com.google.android.material.tabs.TabLayout;
 
 /**
