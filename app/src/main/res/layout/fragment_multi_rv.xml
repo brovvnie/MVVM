@@ -3,15 +3,15 @@
 
     <data>
 
-        <import type="com.goldze.mvvmhabit.ui.rv_multi.MultiRecycleViewModel" />
+        <import type="com.brovvnie.mvvm.ui.rv_multi.MultiRecycleViewModel" />
 
         <variable
             name="viewModel"
             type="MultiRecycleViewModel" />
 
-        <import type="com.goldze.mvvmhabit.binding.viewadapter.recyclerview.LayoutManagers" />
+        <import type="com.brovvnie.mvvm.binding.viewadapter.recyclerview.LayoutManagers" />
 
-        <import type="com.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+        <import type="com.brovvnie.mvvm.binding.viewadapter.recyclerview.LineManagers" />
     </data>
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -23,8 +23,6 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            binding:itemBinding="@{viewModel.itemBinding}"
-            binding:items="@{viewModel.observableList}"
             binding:layoutManager="@{LayoutManagers.linear()}"
             binding:lineManager="@{LineManagers.horizontal()}" />
 

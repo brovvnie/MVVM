@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.goldze.mvvmhabit.base.BaseViewModel" />
+            type="com.brovvnie.mvvm.base.BaseViewModel" />
     </data>
 
     <LinearLayout
@@ -26,10 +26,5 @@
             android:layout_height="1dp"
             android:background="#F0F0F0" />
 
-        <me.majiajie.pagerbottomtabstrip.PageBottomTabLayout
-            android:id="@+id/pager_bottom_tab"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            app:elevation="8dp" />
     </LinearLayout>
 </layout>

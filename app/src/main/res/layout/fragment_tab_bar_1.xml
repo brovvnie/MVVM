@@ -3,7 +3,7 @@
 
     <data>
 
-        <import type="com.goldze.mvvmhabit.base.BaseViewModel" />
+        <import type="com.brovvnie.mvvm.base.BaseViewModel" />
 
         <variable
             name="viewModel"

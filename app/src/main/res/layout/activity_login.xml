@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.goldze.mvvmhabit.ui.login.LoginViewModel" />
+            type="com.brovvnie.mvvm.ui.login.LoginViewModel" />
     </data>
 
     <RelativeLayout
@@ -29,8 +29,10 @@
             android:padding="20dp">
 
             <ImageView
+                android:onClickListener="@{viewModel.imgClick}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:importantForAccessibility="no"
                 android:src="@mipmap/logo" />
 
             <LinearLayout
@@ -152,9 +154,9 @@
             </LinearLayout>
 
             <TextView
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="模拟一个登陆操作,随便输入账号密码点击登录即可进入"
                 android:textColor="#EE1010" />
         </LinearLayout>
