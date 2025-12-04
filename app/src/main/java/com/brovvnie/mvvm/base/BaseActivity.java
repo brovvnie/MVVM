@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.brovvnie.mvvm.BR;
 import com.brovvnie.mvvm.bus.Messenger;
 
 import java.lang.reflect.Method;
@@ -17,19 +18,14 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
 
-/**
- * Created by goldze on 2017/6/15.
- * 一个拥有DataBinding框架的基Activity
- * 这里根据项目业务可以换成你自己熟悉的BaseActivity, 但是需要继承RxAppCompatActivity,方便LifecycleProvider管理生命周期
- */
 public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseViewModel> extends FragmentActivity implements IBaseView {
     protected V binding;
     protected VM viewModel;
-    private int viewModelId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // 适配Android15系统栏
         //页面接受的参数方法
         initParam();
         //私有的初始化Databinding和ViewModel方法
@@ -70,26 +66,14 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
             setContentView(binding.getRoot());
             viewModel = (VM) new ViewModelProvider(this).get(vmC);
         }
-        viewModelId = initVariableId();
-        //关联ViewModel
-        binding.setVariable(viewModelId, viewModel);
         //支持LiveData绑定xml，数据改变，UI自动会更新
         binding.setLifecycleOwner(this);
         //让ViewModel拥有View的生命周期感应
         getLifecycle().addObserver(viewModel);
+        //绑定viewModel
+        binding.setVariable(BR.vm, viewModel);
     }
 
-    //刷新布局
-    public void refreshLayout() {
-        if (viewModel != null) {
-            binding.setVariable(viewModelId, viewModel);
-        }
-    }
-
-
-    /**
-     * =====================================================================
-     **/
     //注册ViewModel与View的契约UI回调事件
     protected void registorUIChangeLiveDataCallBack() {
         //加载对话框显示
@@ -186,23 +170,11 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
      **/
     @Override
     public void initParam() {
-
     }
-
-    /**
-     * 初始化ViewModel的id
-     *
-     * @return BR的id
-     */
-    public abstract int initVariableId();
-
     @Override
     public void initData() {
-
     }
-
     @Override
     public void initViewObservable() {
-
     }
 }

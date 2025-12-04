@@ -4,7 +4,7 @@
     <data>
         <import type="com.brovvnie.mvvm.ui.viewpager.vm.ViewPagerViewModel" />
         <variable
-            name="viewModel"
+            name="vm"
             type="ViewPagerViewModel" />
     </data>
 

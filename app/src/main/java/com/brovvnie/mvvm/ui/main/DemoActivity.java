@@ -7,7 +7,6 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
 
 import com.blankj.utilcode.util.ToastUtils;
-import com.brovvnie.mvvm.BR;
 import com.brovvnie.mvvm.base.BaseActivity;
 import com.brovvnie.mvvm.databinding.ActivityDemoBinding;
 import com.brovvnie.mvvm.http.DownLoadManager;
@@ -25,12 +24,6 @@ public class DemoActivity extends BaseActivity<ActivityDemoBinding, DemoViewMode
         super.initParam();
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
-
-    @Override
-    public int initVariableId() {
-        return BR.viewModel;
-    }
-
     @Override
     public void initViewObservable() {
         //注册监听相机权限的请求

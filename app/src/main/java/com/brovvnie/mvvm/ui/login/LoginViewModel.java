@@ -1,12 +1,12 @@
 package com.brovvnie.mvvm.ui.login;
 
-import android.app.Application;
 import android.text.TextUtils;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.ObservableField;
 import androidx.databinding.ObservableInt;
+import androidx.lifecycle.LifecycleOwner;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.brovvnie.mvvm.base.BaseViewModel;
@@ -15,9 +15,6 @@ import com.brovvnie.mvvm.binding.command.BindingCommand;
 import com.brovvnie.mvvm.binding.command.BindingConsumer;
 import com.brovvnie.mvvm.bus.event.SingleLiveEvent;
 
-/**
- * Created by goldze on 2017/7/17.
- */
 public class LoginViewModel extends BaseViewModel {
     //用户名的绑定
     public ObservableField<String> userName = new ObservableField<>("");
@@ -28,7 +25,8 @@ public class LoginViewModel extends BaseViewModel {
     //封装一个界面发生改变的观察者
     public UIChangeObservable uc = new UIChangeObservable();
 
-    public LoginViewModel(@NonNull Application application) {
+    @Override
+    public void onCreate(@NonNull LifecycleOwner owner) {
 
     }
 
@@ -70,7 +68,14 @@ public class LoginViewModel extends BaseViewModel {
             login();
         }
     });
-    public void imgClick(View view){
+    private int i;
+
+    public void login(int a) {
+        i++;
+        ToastUtils.showShort("点击了按钮" + i);
+    }
+
+    public void imgClick() {
         ToastUtils.showShort("点击了图片");
     }
 

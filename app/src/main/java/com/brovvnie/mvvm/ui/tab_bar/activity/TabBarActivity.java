@@ -3,7 +3,6 @@ package com.brovvnie.mvvm.ui.tab_bar.activity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.brovvnie.mvvm.BR;
 import com.brovvnie.mvvm.R;
 import com.brovvnie.mvvm.base.BaseActivity;
 import com.brovvnie.mvvm.base.BaseViewModel;
@@ -24,12 +23,6 @@ import java.util.List;
 
 public class TabBarActivity extends BaseActivity<ActivityTabBarBinding, BaseViewModel> {
     private List<Fragment> mFragments;
-
-    @Override
-    public int initVariableId() {
-        return BR.viewModel;
-    }
-
     @Override
     public void initData() {
         //初始化Fragment

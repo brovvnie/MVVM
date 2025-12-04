@@ -4,7 +4,6 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.Observer;
 
 import com.blankj.utilcode.util.ToastUtils;
-import com.brovvnie.mvvm.BR;
 import com.brovvnie.mvvm.base.BaseActivity;
 import com.brovvnie.mvvm.databinding.FragmentViewpagerBinding;
 import com.brovvnie.mvvm.ui.viewpager.vm.ViewPagerViewModel;
@@ -17,13 +16,6 @@ import com.google.android.material.tabs.TabLayout;
  */
 
 public class ViewPagerActivity extends BaseActivity<FragmentViewpagerBinding, ViewPagerViewModel> {
-
-    @Override
-    public int initVariableId() {
-        return BR.viewModel;
-    }
-
-
     @Override
     public void initData() {
         // 使用 TabLayout 和 ViewPager 相关联
