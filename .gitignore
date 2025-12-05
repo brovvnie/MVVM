@@ -10,3 +10,4 @@ key.jks
 /mvvmhabit/bintray.gradle
 .idea
 app/build
+.kotlin

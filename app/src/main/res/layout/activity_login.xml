@@ -29,7 +29,7 @@
             android:padding="20dp">
 
             <ImageView
-                onClickSingleDebouncing="@{()->vm.login(1)}"
+                onClickSingleDebouncing="@{()->vm.login()}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:importantForAccessibility="no"
@@ -147,7 +147,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="?selectableItemBackground"
-                    android:onClick="@{()->vm.login(1)}"
+                    android:onClick="@{()->vm.login()}"
                     android:text="登录"
                     android:textColor="@color/white"
                     android:textSize="18sp" />

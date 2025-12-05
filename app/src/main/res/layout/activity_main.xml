@@ -19,9 +19,20 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+        <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:menu="@menu/bottom_navigation_menu" />
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableTop="@mipmap/tab_home"
+                android:drawablePadding="-4dp"
+                android:gravity="center"
+                android:text="首页" />
+        </RadioGroup>
     </LinearLayout>
 </layout>

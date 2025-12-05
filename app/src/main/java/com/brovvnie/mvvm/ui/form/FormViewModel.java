@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.databinding.ObservableBoolean;
 import androidx.lifecycle.LifecycleOwner;
 
-import com.alibaba.fastjson2.JSON;
+import com.blankj.utilcode.util.GsonUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.brovvnie.mvvm.binding.command.BindingAction;
 import com.brovvnie.mvvm.binding.command.BindingCommand;
@@ -109,8 +109,8 @@ public class FormViewModel extends ToolbarViewModel {
     public BindingCommand onCmtClickCommand = new BindingCommand(new BindingAction() {
         @Override
         public void call() {
-            String submitJson = JSON.toJSONString(entity);
-            entityJsonLiveData.setValue(submitJson);
+            String json = GsonUtils.toJson(entity);
+            entityJsonLiveData.setValue(json);
         }
     });
 

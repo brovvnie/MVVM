@@ -1,71 +1,28 @@
-# Add project specific ProGuard rules here.
-# By default, the flags in this file are appended to flags specified
-# in D:\AndroidSDK/tools/proguard/proguard-android.txt
-# You can edit the include path and order by changing the proguardFiles
-# directive in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
-
-# Add any project specific keep options here:
-
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
-
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
-
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
-
-#------------------------------------------主项目混淆规则----------------------------------------------
 #实体类不参与混淆
 -keep class com.brovvnie.mvvm.entity.** { *; }
-
 #tkrefreshlayout
 -keep class com.lcodecore.tkrefreshlayout.** { *; }
 -dontwarn com.lcodecore.tkrefreshlayout.**
-
-#-------------------------------------------MVVMHabit混淆规则----------------------------------------------
-#---------------------------------1.实体类---------------------------------
-
--keep class me.goldze.mvvmhabit.http.BaseResponse { *; }
-
-#-------------------------------------------------------------------------
-
-#--------------------------------2.第三方包-------------------------------
 #support
 -keep class android.support.** { *; }
 -keep interface android.support.** { *; }
 -dontwarn android.support.**
-
 #databinding
 -keep class android.databinding.** { *; }
 -dontwarn android.databinding.**
-
 #annotation
 -keep class android.support.annotation.** { *; }
 -keep interface android.support.annotation.** { *; }
-
 #retrofit
 -dontwarn retrofit2.**
 -keep class retrofit2.** { *; }
 -keepattributes Signature
 -keepattributes Exceptions
-
 #gson
 -keepattributes Signature
 -keepattributes *Annotation*
--keep class sun.misc.Unsafe { *; }
 -keep class com.google.gson.stream.** { *; }
 -keep class com.sunloto.shandong.bean.** { *; }
-
 #glide
 -keep public class * implements com.bumptech.glide.module.AppGlideModule
 -keep public class * implements com.bumptech.glide.module.LibraryGlideModule
@@ -74,11 +31,9 @@
     **[] $VALUES;
     public *;
 }
-
 #glide-transformations
 -keep class jp.wasabeef.glide.transformations.** {*;}
 -dontwarn jp.wasabeef.glide.transformations.**
-
 #okhttp
 -keepattributes Signature
 -keepattributes *Annotation*
@@ -89,63 +44,16 @@
 -dontwarn com.squareup.okhttp.**
 -dontwarn okhttp3.**
 -dontwarn okio.**
-
 #RxJava RxAndroid
 -dontwarn rx.*
 -dontwarn sun.misc.**
-
 -keepclassmembers class rx.internal.util.unsafe.*ArrayQueue*Field* {
    long producerIndex;
    long consumerIndex;
 }
-
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueProducerNodeRef {
-    rx.internal.util.atomic.LinkedQueueNode producerNode;
-}
-
--keepclassmembers class rx.internal.util.unsafe.BaseLinkedQueueConsumerNodeRef {
-    rx.internal.util.atomic.LinkedQueueNode consumerNode;
-}
-
-#RxLifecycle
--keep class com.trello.rxlifecycle2.** { *; }
--keep interface com.trello.rxlifecycle2.** { *; }
--dontwarn com.trello.rxlifecycle2.**
-
-#RxPermissions
--keep class com.tbruyelle.rxpermissions2.** { *; }
--keep interface com.tbruyelle.rxpermissions2.** { *; }
-
-#material-dialogs
--keep class com.afollestad.materialdialogs.** { *; }
--dontwarn om.afollestad.materialdialogs.**
-
 #=====================bindingcollectionadapter=====================
 -keep class me.tatarka.bindingcollectionadapter.** { *; }
 -dontwarn me.tatarka.bindingcollectionadapter.**
-
-
-#---------------------------------------------------------------------------
-
-#---------------------------------3.与js互相调用的类------------------------
-
-#无
-
-#----------------------------------------------------------------------------
-
-#---------------------------------4.反射相关的类和方法-----------------------
--keep public class * extends me.goldze.mvvmhabit.base.BaseActivity{ *; }
--keep public class * extends me.goldze.mvvmhabit.base.BaseFragment{ *; }
--keep public class * extends me.goldze.mvvmhabit.binding.command.BindingCommand{ *; }
--keep public class * extends me.goldze.mvvmhabit.binding.command.ResponseCommand{ *; }
-
-
-#----------------------------------------------------------------------------
-
-#---------------------------------5.自定义控件------------------------------
-
--keep class me.goldze.mvvmhabit.widget.** { *; }
-
 #----------------------------------------------------------------------------
 #---------------------------------6.其他定制区-------------------------------
 #native方法不被混淆
@@ -245,9 +153,7 @@
 -keep public class * extends android.app.backup.BackupAgentHelper
 -keep public class * extends android.preference.Preference
 -keep public class * extends android.view.View
--keep public class com.android.vending.licensing.ILicensingService
 -keep class android.support.** {*;}
-
 -keep public class * extends android.view.View{
     *** get*();
     void set*(***);
@@ -273,18 +179,21 @@
 -keepclassmembers class * {
     void *(**On*Event);
 }
-#----------------------------------------------------------------------------
-
-#---------------------------------webview------------------------------------
--keepclassmembers class fqcn.of.javascript.interface.for.Webview {
-   public *;
-}
 -keepclassmembers class * extends android.webkit.WebViewClient {
     public void *(android.webkit.WebView, java.lang.String, android.graphics.Bitmap);
     public boolean *(android.webkit.WebView, java.lang.String);
 }
 -keepclassmembers class * extends android.webkit.WebViewClient {
-    public void *(android.webkit.WebView, jav.lang.String);
+    public void *(android.webkit.WebView, java.lang.String);
 }
-#----------------------------------------------------------------------------
-#----------------------------------------------------------------------------
+# 保持数据类不被混淆
+-keep class com.brovvnie.mvvm.bean.** { *; }
+# 如果引入了 kotlin-reflect，需保持它
+-keep class org.jetbrains.** { *; }
+-keep class **.kotlin.** { *; }
+-dontwarn org.jetbrains.kotlin.**
+# 保持 Fastjson 相关的类
+-dontwarn com.alibaba.fastjson2.**
+-keep class com.alibaba.fastjson2.JSON { *; }
+-keep class com.alibaba.fastjson2.parser.** { *; }
+-keep class com.alibaba.fastjson2.serializer.** { *; }
