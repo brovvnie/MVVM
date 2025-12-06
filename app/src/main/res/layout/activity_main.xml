@@ -7,6 +7,10 @@
         <variable
             name="vm"
             type="com.brovvnie.mvvm.ui.main.MainViewModel" />
+
+        <variable
+            name="adapter"
+            type="androidx.viewpager2.adapter.FragmentStateAdapter" />
     </data>
 
     <LinearLayout
@@ -15,24 +19,41 @@
         android:orientation="vertical">
 
         <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp2"
+            adapter="@{adapter}"
+            currentItem="@{vm.page}"
+            registerOnPageChange="@{(position)->vm.pageChange(position)}"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1" />
 
         <RadioGroup
+            android:id="@+id/radio_group"
+            checkChildAt="@{vm.page}"
+            setOnCheckedChangeListener="@{(position)->vm.pageChange(position)}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:checkedButton="@id/rb1"
             android:orientation="horizontal">
 
             <RadioButton
-                android:layout_width="0dp"
-                android:layout_height="35dp"
-                android:layout_weight="1"
-                android:button="@null"
-                android:drawableTop="@mipmap/tab_home"
-                android:drawablePadding="-4dp"
-                android:gravity="center"
+                android:id="@+id/rb1"
+                style="@style/TabStyle"
+                android:drawableTop="@drawable/selector_tab_home"
                 android:text="首页" />
+
+            <RadioButton
+                android:id="@+id/rb2"
+                style="@style/TabStyle"
+                android:drawableTop="@drawable/selector_tab_device"
+                android:text="设备" />
+
+            <RadioButton
+                android:id="@+id/rb3"
+                style="@style/TabStyle"
+                android:drawableTop="@drawable/selector_tab_mine"
+                android:text="我的" />
         </RadioGroup>
     </LinearLayout>
 </layout>

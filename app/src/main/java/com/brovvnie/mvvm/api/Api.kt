@@ -5,4 +5,5 @@ object Api {
     const val LOGIN = "user/login"
     const val REGISTER = "user/register"
     const val BANNER = "user/logout/json"
+    const val ARTICLE = "article/list/"
 }

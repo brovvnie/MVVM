@@ -19,10 +19,6 @@ import com.brovvnie.mvvm.bus.Messenger;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
-
-/**
- * Created by goldze on 2017/6/15.
- */
 public abstract class BaseFragment<V extends ViewDataBinding, VM extends BaseViewModel> extends Fragment implements IBaseView {
     protected V binding;
     protected VM viewModel;

@@ -17,7 +17,6 @@ junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 kotlinxCoroutinesAndroid = "1.7.3"
 library = "1.7.7"
-activityCompose = "1.10.1"
 composeBom = "2025.05.01"
 fragment = "1.8.7"
 appcompat = "1.7.1"
@@ -51,11 +50,10 @@ wechat = "10.1511"
 amapLocation = "6.1.0"
 amap = "9.5.0"
 autoSize = "v1.2.1"
-activity = "1.10.1"
+activity = "1.12.1"
 legacySupportV4 = "1.0.0"
 baseAdapter = "4.1.4"
 wechatSdkAndroid = "6.8.30"
-xxpermissions = "23.0"
 zxingAndroidEmbedded = "3.6.0"
 lifecycle = "2.10.0"
 kotlinReflect = "2.2.21"
@@ -87,11 +85,11 @@ support-v4 = { module = "com.android.support:support-v4", version.ref = "v7" }
 appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
 androidx-legacy = { module = "androidx.legacy:legacy-support-v4", version.ref = "legacySupportV4" }
 androidx-activity = { module = "androidx.activity:activity", version.ref = "activity" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity" }
 androidx-core = { module = "androidx.core:core", version.ref = "core" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
-androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
 androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
@@ -135,7 +133,6 @@ amap-search = { module = "com.amap.api:search", version.ref = "amap" }
 autoSize = { module = "com.github.JessYanCoding:AndroidAutoSize", version.ref = "autoSize" }
 baseAdapter = { module = "io.github.cymchad:BaseRecyclerViewAdapterHelper4", version.ref = "baseAdapter" }
 wechat-sdk-android = { module = "com.tencent.mm.opensdk:wechat-sdk-android", version.ref = "wechatSdkAndroid" }
-xxpermissions = { module = "com.github.getActivity:XXPermissions", version.ref = "xxpermissions" }
 zxing-android-embedded = { module = "com.journeyapps:zxing-android-embedded", version.ref = "zxingAndroidEmbedded" }
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }

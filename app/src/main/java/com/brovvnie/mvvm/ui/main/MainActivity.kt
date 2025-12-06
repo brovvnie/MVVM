@@ -1,11 +1,16 @@
 package com.brovvnie.mvvm.ui.main
 
-import android.os.Bundle
-import com.brovvnie.mvvm.base.BaseActivity
+import androidx.fragment.app.Fragment
+import com.brovvnie.mvvm.base.BaseMVVMActivity
+import com.brovvnie.mvvm.base.BaseVP2Adapter
 import com.brovvnie.mvvm.databinding.ActivityMainBinding
+import com.brovvnie.mvvm.ui.device.DeviceFragment
+import com.brovvnie.mvvm.ui.home.HomeFragment
+import com.brovvnie.mvvm.ui.mine.MineFragment
 
-class MainActivity: BaseActivity<ActivityMainBinding, MainViewModel>() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+class MainActivity : BaseMVVMActivity<ActivityMainBinding, MainViewModel>() {
+    override fun initView() {
+        val fragments = listOf<Fragment>(HomeFragment(), DeviceFragment(), MineFragment())
+        binding.adapter = BaseVP2Adapter(supportFragmentManager, lifecycle, fragments)
     }
 }

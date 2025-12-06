@@ -38,6 +38,7 @@ android {
 }
 dependencies {
     implementation(fileTree(mapOf("include" to listOf("*.jar"), "dir" to "libs")))
+    implementation(libs.androidx.activity)
     implementation(libs.material)
     implementation(libs.bundles.lifecycle)
     implementation(libs.utilcode)
